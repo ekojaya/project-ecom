@@ -7,16 +7,7 @@
 
 ## How To Run
 
-* Stop all docker instance
-
-```sh
-docker stop $(docker ps -a -q)
-```
-* Run docker using docker-compose
-
-```sh
-docker-compose up
-```
+* npm start
 
 * Frontend web will run on :3000, cms on :1337 and database (mongodb) on :27017
 * Reverse proxy will serve on :8080
