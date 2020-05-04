@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  project-database:
+    image: mongo:4.0
+    command: mongod --smallfiles --quiet --logpath=/dev/null
+    ports:
+      - 27017:27017
+    restart: always
+    networks:
+      - project
+  # project-cms:
+  #   build: ./project-cms
+  #   working_dir: /js/project-cms
+  #   ports:
+  #     - 1337:1337
+  #   volumes:
+  #     - ./project-cms:/js/project-cms
+  #     - /js/project-cms/node_modules
+  #   restart: always
+  #   links:
+  #     - 'project-database'
+  #   networks:
+  #     - project
+  project-web:
+    build: ./project-web
+    working_dir: /js/project-web
+    ports:
+      - 3000:3000
+    volumes:
+      - ./project-web:/js/project-web
+      - /js/project-web/node_modules
+    restart: always
+    # links:
+    #   - 'project-cms'
+    networks:
+      - project
+networks:
+  project:
+    driver: bridge

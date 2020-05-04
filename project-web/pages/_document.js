@@ -1,0 +1,35 @@
+import React from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+
+export default class DocumentContainer extends Document {
+  render() {
+    return (
+      <html lang='en-US'>
+        <Head>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <link rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossOrigin="anonymous"/>
+          <link href="/static/css/custom.css" rel="stylesheet"/>
+          <link href="/static/css/flickity.css" rel="stylesheet"/>
+          <link href="/static/css/theme.css" rel="stylesheet"/>
+          <link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet"/>
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Work+Sans:100,300,400,500,600,700&display=swap" 
+            rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        </Head>
+        <body className="d-flex flex-column">
+          <Main/>
+          <NextScript/>
+        </body>
+      </html>
+    );
+  }
+}
