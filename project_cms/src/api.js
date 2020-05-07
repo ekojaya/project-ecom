@@ -2,7 +2,7 @@ import Axios from "axios";
 
 const token = localStorage.getItem("token");
 const url = "http://127.0.0.1:8000/api/";
-
+// const url = "http://127.0.0.1:8000/api/"; 1
 const headers = {
   Authorization: `Bearer ${token}`,
 };
